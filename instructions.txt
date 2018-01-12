@@ -1,0 +1,4 @@
+1)install python with adding to PATH
+2)run install_packages.bat for installing dependences 
+
+thats it!
