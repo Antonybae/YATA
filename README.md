@@ -28,7 +28,7 @@ Installation
 -Run install_packages.bat
 
 Working
--Run main.py
+-Run application.pyc
 -Enter path to script
 -Click Start
 -Wait while program working
