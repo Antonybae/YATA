@@ -1,0 +1,5 @@
+DOUBLECLICK images\icon.png
+UNTIL images\until.png
+CLICK images\data.png
+CLICK images\list.png
+COMPARE images\result.png
