@@ -4,4 +4,4 @@
 * ~~add insert~~
 * ~~add compare~~
 * script editor
-* ?pack script in single file
+* pack script in single file?
