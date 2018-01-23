@@ -1,0 +1,17 @@
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\bin\Debug\YATA_Editor.exe.config
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\bin\Debug\YATA_Editor.exe
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\bin\Debug\YATA_Editor.pdb
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor.csprojResolveAssemblyReference.cache
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\MainWindow.g.cs
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\App.g.cs
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor_MarkupCompile.cache
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor_MarkupCompile.lref
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\MainWindow.baml
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor.g.resources
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor.Properties.Resources.resources
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor.csproj.GenerateResource.Cache
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor.exe
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\YATA_Editor.pdb
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\ScreenshotPage.g.cs
+C:\Users\Anton\Desktop\Projects\YATA\Editor\YATA_Editor\YATA_Editor\obj\Debug\ScreenshotPage.baml

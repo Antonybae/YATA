@@ -1,0 +1,90 @@
+﻿<Window x:Class="YATA_Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YATA_Editor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="#FFCDCDCD">
+                <MenuItem Header="_File" Background="White">
+                    <MenuItem Header="_New" Click="NewFile_Click"/>
+                    <MenuItem Header="_Open" Click="OpenFile_Click"/>
+                    <MenuItem Header="_Save" Click="SaveFile_Click"/>
+                    <MenuItem Header="_Save as..." Click="SaveFileAs_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Edit" Background="White">
+                    <MenuItem Header="_Configuration" Click="OpenFile_Click"/>
+                </MenuItem>
+                <MenuItem Header="_About" Background="White"/>
+
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
+        <DataGrid Name="scriptGrid"  Margin="0,38,10,10" AutoGenerateColumns="False" HorizontalAlignment="Right" Width="563">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Command" Width="430" Binding="{Binding [0]}" CanUserResize="False"/>
+                <DataGridTemplateColumn Header="Image" Width="120" IsReadOnly="True" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding [1]}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListBox Name="operationsListBox" Height="521" Margin="10,38,633,0" VerticalAlignment="Top">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="3" ToolTip="{Binding Name}" Width="25" Source="{Binding Icon}"/>
+                        <TextBlock Margin="3" Text="{Binding Value}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Click="AddOperation_Click" Margin="0,220,578,0" VerticalAlignment="Top" Height="50" Foreground="Black" Style="{StaticResource MyButton}" HorizontalAlignment="Right" Width="50">
+            <Button.Background>
+                <ImageBrush ImageSource="Icons/chevron_blue.png"/>
+            </Button.Background>
+        </Button>
+        <Button Click="RemoveOperation_Click" Margin="0,275,578,0" VerticalAlignment="Top" Height="50" Style="{StaticResource MyButton}" HorizontalAlignment="Right" Width="50">
+            <Button.Background>
+                <ImageBrush ImageSource="Icons/chevron_blue.png" >
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="180" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <SaveFolder>"C:\Users\Anton\Desktop\Projects\YATA\Example"</SaveFolder>
+  <ScriptDictionary>
+    <Name>Mouse click</Name>
+    <Value>CLICK</Value>
+    <Icon>Icons/left_click.png</Icon>
+  </ScriptDictionary>
+  <ScriptDictionary>
+    <Name>Double mouse click</Name>
+    <Value>DOUBLECLICK</Value>
+    <Icon>Icons/double_click.png</Icon>
+  </ScriptDictionary>
+  <ScriptDictionary>
+    <Name>Find image on screen</Name>
+    <Value>FIND</Value>
+    <Icon>Icons/search.png</Icon>
+  </ScriptDictionary>
+  <ScriptDictionary>
+    <Name>Wait in seconds</Name>
+    <Value>WAIT</Value>
+    <Icon>Icons/clock.png</Icon>
+  </ScriptDictionary>
+  <ScriptDictionary>
+    <Name>Wait until needed image appears on screen</Name>
+    <Value>UNTIL</Value>
+    <Icon>Icons/stopwatch.png</Icon>
+  </ScriptDictionary>
+  <ScriptDictionary>
+    <Name>Compare image with screen and show results</Name>
+    <Value>COMPARE</Value>
+    <Icon>Icons/scales.png</Icon>
+  </ScriptDictionary>
+</Configuration>

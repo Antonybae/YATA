@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YATA_Editor", "YATA_Editor\YATA_Editor.csproj", "{EB29E7FE-9E5A-4180-8413-5F2A785749F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB29E7FE-9E5A-4180-8413-5F2A785749F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB29E7FE-9E5A-4180-8413-5F2A785749F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB29E7FE-9E5A-4180-8413-5F2A785749F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB29E7FE-9E5A-4180-8413-5F2A785749F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27E70248-45F8-4B9D-BDAE-C169AFC0ABD6}
+	EndGlobalSection
+EndGlobal
