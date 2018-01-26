@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows;
+using System.IO;
 
 namespace YATA_Editor
 {
-	class Screenshot
+	class Screenshot : IDisposable
 	{
-		public Bitmap image { get; set; }
+		public Bitmap _image { get; set; }
 		int _width;
 		int _height;
 		public string _filename { get; set; }
+		private string previousFilename { get; set; }
 
 		public Screenshot(int width, int height)
 		{
@@ -25,29 +27,44 @@ namespace YATA_Editor
 		public void Update()
 		{
 			Graphics graph = null;
-			image = new Bitmap(_width, _height);
-			graph = Graphics.FromImage(image);
-			graph.CopyFromScreen(0, 0, 0, 0, image.Size);
-			Save(@"C:\\Users\\Anton\\Desktop\\Projects\\YATA\\Editor\\YATA_Editor\\YATA_Editor\\bin\\Debug\\temp.bmp");
+			_image = new Bitmap(_width, _height);
+			
+			graph = Graphics.FromImage(_image);
+			graph.CopyFromScreen(0, 0, 0, 0, _image.Size);
+
+			Save();
 		}
 
-		public void Save(string filename)
+		public void Clean()
 		{
-			_filename = filename;
-			image.Save(_filename);
+			//.Delete(previousFilename);
+		}
+
+		public void Save()
+		{
+			var dialog = new DialogManager();
+			dialog.OpenSaveDialog(_image);
+			_filename = dialog.Filename;
 		}
 
 		public void Cut(Rectangle rectangle)
 		{
-			// An empty bitmap which will hold the cropped image
-			Bitmap temp = new Bitmap(_width, _height);
+			using (Bitmap temp = new Bitmap(rectangle.Width, rectangle.Height))
+			{
+				Graphics g = Graphics.FromImage(temp);
 
-			Graphics g = Graphics.FromImage(temp);
+				g.DrawImage(_image, 0, 0, rectangle, GraphicsUnit.Pixel);
 
-			// Draw the given area (section) of the source image
-			// at location 0,0 on the empty bitmap (bmp)
-			g.DrawImage(image, 0, 0, rectangle, GraphicsUnit.Pixel);
-			image = temp;
+				var dialog = new DialogManager(); //FIXME
+				dialog.OpenSaveDialog(temp);
+				previousFilename = _filename;
+				_filename = dialog.Filename;
+			}
+		}
+
+		public void Dispose()
+		{
+			_image.Dispose();
 		}
 	}
 }

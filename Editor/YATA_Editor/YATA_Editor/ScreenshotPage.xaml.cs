@@ -20,14 +20,53 @@ namespace YATA_Editor
 	public partial class ScreenshotPage : Window
 	{
 		Screenshot screen;
+		System.Drawing.Point start;
+		System.Drawing.Point end;
+
+		bool IsLMBPressed = false;
 
 		public ScreenshotPage()
 		{
 			InitializeComponent();
+
 			this.Width = (int)SystemParameters.VirtualScreenWidth;
 			this.Height = (int)SystemParameters.VirtualScreenHeight;
 			screen = new Screenshot((int)this.Width, (int)this.Height);
-			ScreenshotImage.Source = new BitmapImage(new Uri(screen._filename));
+			Uri uri = new Uri(screen._filename, UriKind.RelativeOrAbsolute);
+			ScreenshotImage.Source = new BitmapImage(uri);
+		}
+
+		public string GetImage()
+		{
+			if (screen._filename == null)
+				return "";
+			else
+				return screen._filename;
+		}
+
+		private void LMBDown(object sender, MouseButtonEventArgs e)
+		{
+			IsLMBPressed = true;
+			start = new System.Drawing.Point((int)e.GetPosition(this).X, (int)e.GetPosition(this).Y);
+		}
+		private void LMBUp(object sender, MouseButtonEventArgs e)
+		{
+			IsLMBPressed = false;
+			end = new System.Drawing.Point((int)e.GetPosition(this).X, (int)e.GetPosition(this).Y);
+
+			screen.Cut(new System.Drawing.Rectangle(start.X, start.Y, end.X - start.X, end.Y - start.Y));
+
+			ScreenshotImage.Source = null;
+			screen.Clean();
+			Close();
+		}
+
+		private void ImageMouseMove(object sender, MouseEventArgs e)
+		{
+			if(IsLMBPressed)
+			{
+
+			}
 		}
 	}
 }

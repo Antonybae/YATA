@@ -51,7 +51,7 @@ namespace YATA_Editor
 					dialogs.OpenSaveDialog(generatedScriptText);
 			}
 			else
-				dialogs.Save(generatedScriptText);
+				dialogs.SaveScript(generatedScriptText);
 		}
 
 		public void GenerateScriptText(List<string[]> OperaionsList)

@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="ScreenshotPage" Height="300" Width="300">
     <Grid>
-        <Image Margin="3" Name="ScreenshotImage"/>
+        <Image Margin="3" Name="ScreenshotImage" MouseDown="LMBDown" MouseUp="LMBUp" MouseMove="ImageMouseMove"/>
     </Grid>
 </Window>

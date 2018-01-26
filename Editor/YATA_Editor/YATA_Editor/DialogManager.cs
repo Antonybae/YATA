@@ -6,13 +6,35 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using Microsoft.Win32;
+using System.Drawing;
+
 
 namespace YATA_Editor
 {
+	enum DOCUMENT_TYPE
+	{
+		DOCUMENT_TYPE_SCRIPT,
+		DOCUMENT_TYPE_IMAGE
+	}
+
+
 	class DialogManager
 	{
 		public string ScriptName { get; set; } = "";
 		public string ScriptDirectory { get; set; } = "";
+		public string Filename { get; set; }
+
+		private bool Dialog()
+		{
+			SaveFileDialog saveDialog = new SaveFileDialog()
+			{
+				FileName = "file.bmp",
+				Filter = "Image Files (*.bmp) | *.bmp|All files(*.*) | *.*"
+			};
+			Nullable<bool> result = saveDialog.ShowDialog();
+			Filename = saveDialog.FileName;
+			return (bool)result;
+		}
 
 		public string[] OpenFileDialog()
 		{
@@ -30,9 +52,9 @@ namespace YATA_Editor
 			return data;
 		}
 
-		public void Save(string text, string path = null)
+		public void SaveScript(string text, string path = null)
 		{
-			string saveTo = ScriptDirectory;
+			string saveTo = Filename;
 			if (path != null)
 			{
 				saveTo = path;
@@ -46,17 +68,13 @@ namespace YATA_Editor
 
 		public void OpenSaveDialog(string text)
 		{
-			SaveFileDialog saveDialog = new SaveFileDialog
-			{
-				FileName = "Script.txt",
-				Filter = "Script File | *.txt"
-			};
-			Nullable<bool> result = saveDialog.ShowDialog();
-
-			if (result == true)
-			{
-				Save(text, saveDialog.FileName);
-			}
+			if (Dialog())
+				SaveScript(text);
+		}
+		public void OpenSaveDialog(Bitmap image)
+		{
+			if (Dialog())
+				image.Save(Filename);
 		}
 	}
 }

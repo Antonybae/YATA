@@ -54,7 +54,8 @@ namespace YATA_Editor
 			{
 				ScreenshotPage screenshotPage = new ScreenshotPage();
 				screenshotPage.ShowDialog();
-				string[] temp = { ((ScriptDictionary)operationsListBox.SelectedItem).Value, "" };
+
+				string[] temp = { ((ScriptDictionary)operationsListBox.SelectedItem).Value, screenshotPage.GetImage() };
 				array.Add(temp);
 				UpdateScriptGrid();
 			}
@@ -74,11 +75,13 @@ namespace YATA_Editor
 
 		private void SaveFile_Click(object sender, RoutedEventArgs e)
 		{
+			scriptManager.GenerateScriptText(array);
 			scriptManager.Save();
 		}
 
 		private void SaveFileAs_Click(object sender, RoutedEventArgs e)
 		{
+			scriptManager.GenerateScriptText(array);
 			scriptManager.Save(true);
 		}
 	}
